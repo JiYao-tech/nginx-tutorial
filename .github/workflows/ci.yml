@@ -30,15 +30,6 @@ jobs:
         with:
           package-path: ./package.json
 
-      - name: Deploy Website
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: ${{ github.event.head_commit.message }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-
       - name: Generate Changelog
         id: changelog
         uses: jaywcjlove/changelog-generator@main
